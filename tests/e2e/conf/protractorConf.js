@@ -78,10 +78,10 @@ exports.config = {
 
       if (typeof process.env.TEST_ENVIRONMENT !== "undefined") {
         browser.baseUrl = process.env.TEST_ENVIRONMENT;
-        console.log("Base URL = " + process.env.TEST_ENVIRONMENT);
       } else {
-        console.log("Environment variable undefined, failing test");
+        browser.baseUrl = "clickdimensions.com/form/default.html";
       }
+      console.log("Base URL = " + browser.baseUrl);
 
       var junitReporter = new jasmineReporters.JUnitXmlReporter({
         consolidateAll: true,

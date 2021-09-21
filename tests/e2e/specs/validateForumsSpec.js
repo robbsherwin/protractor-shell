@@ -8,8 +8,6 @@ describe('Website Link Validation', function () {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 900000;
         validateForumsPage = new ValidateForumsPage();
-
-        browser.sleep(5000);
     });
 
     afterEach(function () {
@@ -20,10 +18,13 @@ describe('Website Link Validation', function () {
     });
 
     it('should let us go to the site and highlight an element.', function () {
-        validateForumsPage.navigateToForum();
-        validateForumsPage.displayAllForums();
-        validateForumsPage.highlightForum("Rants");
-        validateForumsPage.highlightForum("Cryptozookeeper");
+        validateForumsPage.submitForm({
+            firstName: "Flynn",
+            lastName: "Taggart",
+            email: "doomslayer@example.com",
+            company: "Doomguy, Inc.",
+            comment: "Rip and tear!"
+        });
     });
 
 
